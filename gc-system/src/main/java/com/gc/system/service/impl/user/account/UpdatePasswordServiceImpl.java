@@ -1,8 +1,8 @@
 package com.gc.system.service.impl.user.account;
 
 import com.alibaba.fastjson.JSONObject;
+import com.gc.system.domain.User;
 import com.gc.system.mapper.UserMapper;
-import com.gc.system.pojo.User;
 import com.gc.system.service.impl.utils.UserDetailsImpl;
 import com.gc.system.service.user.account.UpdatePasswordService;
 import com.gc.system.utils.JwtUtil;
@@ -47,12 +47,11 @@ public class UpdatePasswordServiceImpl implements UpdatePasswordService {
 
         String PasswordEncode = passwordEncoder.encode(newPassword);
         userMapper.updateById(new User(
-                user.getUserId(),
+                user.getId(),
                 user.getUsername(),
-                PasswordEncode,
-                user.getDescription()
+                PasswordEncode
                 ));
-        String jwt = JwtUtil.createJWT(user.getUserId().toString());
+        String jwt = JwtUtil.createJWT(user.getId());
         resp.put("token", jwt);
         return Result.Success(resp);
     }

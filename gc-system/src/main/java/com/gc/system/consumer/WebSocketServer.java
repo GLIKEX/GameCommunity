@@ -1,7 +1,7 @@
 package com.gc.system.consumer;
 
+import com.gc.system.domain.User;
 import com.gc.system.mapper.UserMapper;
-import com.gc.system.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;

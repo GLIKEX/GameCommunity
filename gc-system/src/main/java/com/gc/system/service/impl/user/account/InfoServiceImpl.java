@@ -1,7 +1,7 @@
 package com.gc.system.service.impl.user.account;
 
 import com.alibaba.fastjson.JSONObject;
-import com.gc.system.pojo.User;
+import com.gc.system.domain.User;
 import com.gc.system.service.impl.utils.UserDetailsImpl;
 import com.gc.system.service.user.account.InfoService;
 import com.gc.system.vo.Result;
@@ -20,7 +20,7 @@ public class InfoServiceImpl implements InfoService {
         User user = userDetails.getUser();
 
         JSONObject resp = new JSONObject();
-        resp.put("id", user.getUserId().toString());
+        resp.put("id", user.getId());
         resp.put("username", user.getUsername());
         return Result.Success(resp);
     }

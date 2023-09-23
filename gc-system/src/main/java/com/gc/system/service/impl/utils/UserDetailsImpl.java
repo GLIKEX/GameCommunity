@@ -1,6 +1,6 @@
 package com.gc.system.service.impl.utils;
 
-import com.gc.system.pojo.User;
+import com.gc.system.domain.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

@@ -1,7 +1,7 @@
 package com.gc.system.config.filter;
 
+import com.gc.system.domain.User;
 import com.gc.system.mapper.UserMapper;
-import com.gc.system.pojo.User;
 import com.gc.system.service.impl.utils.UserDetailsImpl;
 import com.gc.system.utils.JwtUtil;
 import io.jsonwebtoken.Claims;

@@ -1,7 +1,7 @@
 package com.gc.system.service.impl.user.account;
 
+import com.gc.system.domain.User;
 import com.gc.system.mapper.UserMapper;
-import com.gc.system.pojo.User;
 import com.gc.system.service.impl.utils.UserDetailsImpl;
 import com.gc.system.service.user.account.UpdateService;
 import com.gc.system.vo.Result;
@@ -30,7 +30,7 @@ public class UpdateServiceImpl implements UpdateService {
         if (username == null || username.equals("")) {
             return Result.fail(400, null, "用户名不能为空");
         }
-        User new_user = new User(user.getUserId(), username, null,description);
+        User new_user = new User(user.getId(), username, null);
         int i = userMapper.updateById(new_user);
         if (i == 1){
             return Result.Success(null);

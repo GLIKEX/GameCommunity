@@ -1,7 +1,7 @@
 package com.gc.system.service.impl.user.account;
 
 import com.alibaba.fastjson.JSONObject;
-import com.gc.system.pojo.User;
+import com.gc.system.domain.User;
 import com.gc.system.service.impl.utils.UserDetailsImpl;
 import com.gc.system.service.user.account.LoginService;
 import com.gc.system.utils.JwtUtil;
@@ -26,7 +26,7 @@ public class LoginServiceImpl implements LoginService {
         UserDetailsImpl loginUser = (UserDetailsImpl) authenticate.getPrincipal();
         User user = loginUser.getUser();
 
-        String jwt = JwtUtil.createJWT(user.getUserId().toString());
+        String jwt = JwtUtil.createJWT(user.getId());
 
         JSONObject resp = new JSONObject();
         resp.put("token", jwt);

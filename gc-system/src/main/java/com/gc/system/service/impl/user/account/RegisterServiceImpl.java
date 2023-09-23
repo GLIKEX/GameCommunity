@@ -1,8 +1,8 @@
 package com.gc.system.service.impl.user.account;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.gc.system.domain.User;
 import com.gc.system.mapper.UserMapper;
-import com.gc.system.pojo.User;
 import com.gc.system.service.user.account.RegisterService;
 import com.gc.system.vo.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +42,7 @@ public class RegisterServiceImpl implements RegisterService {
             return Result.fail(400,null, "用户名已存在");
         }
         String encodePassword = passwordEncoder.encode(password);
-        User user = new User(null, username, encodePassword, null);
+        User user = new User(null, username, encodePassword);
         userMapper.insert(user);
         return Result.Success(null);
     }
