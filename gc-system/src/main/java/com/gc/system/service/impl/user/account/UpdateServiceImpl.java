@@ -30,12 +30,13 @@ public class UpdateServiceImpl implements UpdateService {
         if (username == null || username.equals("")) {
             return Result.fail(400, null, "用户名不能为空");
         }
-        User new_user = new User(user.getId(), username, null);
-        int i = userMapper.updateById(new_user);
-        if (i == 1){
-            return Result.Success(null);
-        } else {
-            return Result.fail(400, null, "更新失败");
-        }
+//        User new_user = new User(user.getId(), username, null);
+//        int i = userMapper.updateById(new_user);
+//        if (i == 1){
+//            return Result.Success(null);
+//        } else {
+//            return Result.fail(400, null, "更新失败");
+//        }
+        return Result.fail(400, null, "更新失败");
     }
 }

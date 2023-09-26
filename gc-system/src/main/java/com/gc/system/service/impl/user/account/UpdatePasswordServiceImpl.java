@@ -46,11 +46,11 @@ public class UpdatePasswordServiceImpl implements UpdatePasswordService {
         }
 
         String PasswordEncode = passwordEncoder.encode(newPassword);
-        userMapper.updateById(new User(
-                user.getId(),
-                user.getUsername(),
-                PasswordEncode
-                ));
+//        userMapper.updateById(new User(
+//                user.getId(),
+//                user.getUsername(),
+//                PasswordEncode
+//                ));
         String jwt = JwtUtil.createJWT(user.getId());
         resp.put("token", jwt);
         return Result.Success(resp);
