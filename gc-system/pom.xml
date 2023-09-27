@@ -16,6 +16,7 @@
     <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
+        <emoji-java.version>5.1.1</emoji-java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -90,12 +91,19 @@
             <artifactId>fastjson</artifactId>
             <version>2.0.10</version>
         </dependency>
+
+        <!--emoji-java-->
+        <dependency>
+            <groupId>com.vdurmont</groupId>
+            <artifactId>emoji-java</artifactId>
+            <version>${emoji-java.version}</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.28</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -106,6 +114,13 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+
+        <!--bean validator-->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
         </dependency>
 
     </dependencies>

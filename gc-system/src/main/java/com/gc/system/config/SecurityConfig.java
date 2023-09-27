@@ -1,6 +1,6 @@
 package com.gc.system.config;
 
-import com.gc.system.config.filter.JwtAuthenticationTokenFilter;
+import com.gc.system.config.jwt.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/user/account/token/", "/api/user/account/register/", "/api/user/account/info/").permitAll()
+                .antMatchers("/ums/user/login", "/ums/user/register").permitAll()
                 .antMatchers().hasIpAddress("127.0.0.1")
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated();
